@@ -1,0 +1,239 @@
+/* style.css */
+
+/* Global Styles */
+:root {
+    --primary-color: #ffffff;
+    --secondary-color: #ffffff;
+    --tertiary-color: #BCF0A1;
+    --dark-color: #486581;
+    --light-color: #ffefff;
+  }
+  
+  /* Add styles for dark mode */
+  [data-theme="dark"] {
+    --primary-color: #102a43;
+    --secondary-color: #334e68;
+    --tertiary-color: #66E4CD;
+    --dark-color: #ffffff;
+    --light-color: #334e68; 
+  }
+
+  [data-theme="dark"] button:hover {
+    background-color: #4bac9ade;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  .container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffefff; /* Light mode background color */
+    color: var(--dark-color); /* Dark mode font color */
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
+    border-radius: 15px;
+  }
+
+  [data-theme="dark"] .container {
+    background-color: #102a43;
+    color: #ffffff;
+  }
+  
+  h1 {
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--dark-color);
+  }
+  
+  /* Form Styles */
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .form-group {
+    margin-bottom: 30px;
+  }
+  
+  label {
+    font-size: 30px;
+    color: var(--dark-color);
+    margin-bottom: 5px;
+    display: block;
+  }
+  
+  input[type="date"] {
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    background-color: var(--tertiary-color);
+    color: var(--dark-color);
+  }
+  
+  button{
+    padding: 10px 20px;
+    font-size: 18px;
+    font-family: 'Open Sans', sans-serif;
+    border-radius: 25px;
+    border: none;
+    background-color: var(--tertiary-color);
+    color: var(--dark-color);
+    cursor: pointer;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+    transition: transform 0.3s;
+  }
+  
+  button:hover {
+    background-color: #227f4f;
+    color: #fff;
+    transform: translateX(8.9px);
+  }
+
+  
+  button[type="submit"]:active {
+    transform: translateY(2px);
+  }
+  
+  /* Result Styles */
+  
+  #result {
+    font-size: 20px;
+    font-family: 'Source Code Pro', monospace;
+    color: var(--dark-color);
+    text-align: center;
+    margin-top: 30px;
+  }
+  
+  #result.invalid {
+    color: #f00;
+  }
+  
+  @media screen and (max-width: 768px) {
+    h1 {
+      font-size: 25px;
+    }
+  
+    input[type="date"] {
+      width: 100%;
+      padding: 10px 5px;
+    }
+  
+    button[type="submit"] {
+      width: 100%;
+      border-radius: 10px;
+    }
+  }
+
+
+
+  /* Toggle Styles */
+.toggle-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+  
+  .icon {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+  
+  #moon-toggle {
+    margin: 0px -12px 13px 39px;
+  }
+
+  #sun-toggle {
+    margin: 0px 40px 12px -35px;
+  }
+  
+  #mode-toggle:checked ~ #icon-toggle {
+    padding: 7px 9px 5px 12px;
+  }
+  
+  .toggle {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+  
+  .toggle-input {
+    display: none;
+  }
+  
+  .toggle-label {
+    margin: 0px 0px 0px -80px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 34px;
+    background-color: #cec2c23d;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+  }
+  
+  .toggle-input:checked + .toggle-label {
+    background-color: #102a43;
+  }
+  
+  .toggle-label:before {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #fff;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .toggle-input:checked + .toggle-label:before {
+    transform: translateX(26px);
+  }
+  
+  /* PNG Icons for Toggle */
+  @keyframes spin {
+    100% {
+    
+    }
+  }
+  
+  .icon {
+    animation: spin 2s linear infinite;
+  }
+  
+  /* Content Styles */
+  #content {
+    padding: 20px;
+    background-color: var(--secondary-color);
+    color: var(--dark-color);
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+  }

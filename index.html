@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <title>Age Calculator</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@1,300;1,400&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap');
+  </style>
+
+</head>
+
+<body>
+  <div class="container">
+    <!-- Toggle slider for night mode and light view -->
+    <div class="toggle-group">
+        <span class="icon"></span>
+        <img src="sun.svg.png" alt="Sun icon" id="sun-toggle" height="20vh" width="20vw">
+        <img src="moon.svg.png" alt="Moon icon" id="moon-toggle" height="20vh" width="20vw">
+        
+        <label class="toggle">
+          <input type="checkbox" id="mode-toggle" class="toggle-input">
+          <span class="toggle-label"></span>
+        </label>
+      </div>
+
+    <h1>Age Calculator</h1>
+    <label>Enter your date of birth</label>
+    <input type="date" id="dob">
+    <button onclick="calculateAge()">Calculate Age</button>
+    <p id="result"></p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
